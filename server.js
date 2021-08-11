@@ -1,9 +1,6 @@
-const express = require('express')
-const path = require('path')
-const app = express()
- 
-app.use(express.static(path.join(__dirname, 'public')))
- 
-app.listen(3389, () => {
-  console.log(`App listening at port 3389`)
-})
+var server = require("http");
+server.createServer(function(request,response){
+        response.writeHead(200,{"Content-Type":"text/html"});
+        response.end("Hello,NodeJS");
+}).listen(9000);
+console.log("server running at http://127.0.0.1:9000");
