@@ -8,7 +8,7 @@ var videoSource  = document.querySelector("select#videoSource");
     if(first == null ){
         if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
             //调用用户媒体设备, 访问摄像头
-            getUserMedia({video: {width: 480, height: 320}}, success, error);
+           alert('支持访问用户媒体');;
         } else {
             alert('不支持访问用户媒体');
         }
