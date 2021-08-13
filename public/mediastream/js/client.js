@@ -25,7 +25,7 @@ function handleError(err){
     if(first == null ){
         if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
             //调用用户媒体设备, 访问摄像头
-            alert('用一下你的摄像头');
+           // alert('用一下你的摄像头');
         } else {
             alert('不支持访问用户媒体');
         }
@@ -36,7 +36,8 @@ if(!navigator.mediaDevices ||
 	}else{
     
         var constraints = {
-                  video : true,
+                  video : {width:640,
+			   height:1204},
                   audio : true 
                           }
 
