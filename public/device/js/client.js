@@ -51,28 +51,3 @@ var videoSource  = document.querySelector("select#videoSource");
     }
  
  
- 
-    //访问用户媒体设备的兼容方法
-    function getUserMedia(constraints, success, error) {
-        if (navigator.mediaDevices.getUserMedia) {
-            //最新的标准API
-            navigator.mediaDevices.getUserMedia(constraints).then(success).catch(error);
-        } else if (navigator.webkitGetUserMedia) {
-            //webkit核心浏览器
-            navigator.webkitGetUserMedia(constraints, success, error)
-        } else if (navigator.mozGetUserMedia) {
-            //firfox浏览器
-            navigator.mozGetUserMedia(constraints, success, error);
-        } else if (navigator.getUserMedia) {
-            //旧版API
-            navigator.getUserMedia(constraints, success, error);
-        }
-    }
-    function success(stream) {
-        console.log(stream);
-        window.localStorage.setItem('first',"false");
-        window.location.reload();
-    }
-    function error(error) {
-        console.log(`访问用户媒体设备失败${error.name}, ${error.message}`);
-    }
