@@ -33,8 +33,10 @@ var videoSource  = document.querySelector("select#videoSource");
 		option.text = deviceInfo.label;
 		option.value = deviceInfo.deviceId;
 		if(deviceInfo.kind === 'audioinput'){
+			option.text += "AudioIn:";
 			audioSource.appendChild(option);
 		}else if(deviceInfo.kind === 'audiooutput'){
+			option.text += "AudioOut:";
 			audioOutput.appendChild(option);
 		}else if(deviceInfo.kind === 'videoinput'){
 			videoSource.appendChild(option);
