@@ -37,7 +37,8 @@ if(!navigator.mediaDevices ||
     
         var constraints = {
                   video : {width:1080,
-			   height:760},
+			   height:760,
+			  facingMode:enviroment},
                   audio : true 
                           }
 
