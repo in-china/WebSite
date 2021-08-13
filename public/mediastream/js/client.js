@@ -24,8 +24,6 @@ function handleError(err){
 if(!navigator.mediaDevices ||
 		!navigator.mediaDevices.getUserMedia){
 		console.log('getUserMedia is not supported!');
-		return;
-
 	}else{
     
         var constraints = {
@@ -39,24 +37,5 @@ if(!navigator.mediaDevices ||
           .then(gotMediaStream)
           .catch(handleError);
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
