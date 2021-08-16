@@ -63,16 +63,19 @@ if(!navigator.mediaDevices ||
 		!navigator.mediaDevices.getUserMedia){
 		console.log('getUserMedia is not supported!');
 	}else{
-    
+        var deviceId = videoSource.value; 
         var constraints = {
-                  video : {width:1080,
-			   height:760,
-			  facingMode: 'enviroment'},
-                  audio : {
-		  	    noiseSuppression:true,
-			    echoCancellation:true
-		  
-		  	   }
+			  video : {width:1080,
+				   height:760,
+				  facingMode: 'enviroment'
+				  deviceId : deviceId ? {exact:deviceId} : undefined
+				  },
+			  audio : {
+				    noiseSuppression:true,
+				    echoCancellation:true
+
+				   }
+				
                           }
         navigator.mediaDevices.getUserMedia(constraints)
           .then(gotMediaStream)
@@ -83,7 +86,7 @@ if(!navigator.mediaDevices ||
 
 
 start();
-
+videoSource.onchange = start;
 
 
 
