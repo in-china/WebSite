@@ -65,8 +65,8 @@ if(!navigator.mediaDevices ||
 	}else{
         var deviceId = videoSource.value; 
         var constraints = {
-			  video : {width:1080,
-				   height:760,
+			  video : {width:640,
+				   height:480,
 				  facingMode: 'enviroment',
 				  deviceId : deviceId ? {exact:deviceId} : undefined
 				  },
