@@ -119,7 +119,7 @@ if(!navigator.mediaDevices ||
 	  .then(gotDevices)
           .catch(handleError);
   }	
-}
+
 
 
 
