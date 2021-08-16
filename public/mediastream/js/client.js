@@ -39,7 +39,11 @@ if(!navigator.mediaDevices ||
                   video : {width:1080,
 			   height:760,
 			  facingMode: 'enviroment'},
-                  audio : true 
+                  audio : {
+		  	    noiseSuppression:true,
+			    echoCancellation:true
+		  
+		  	   }
                           }
 
     
