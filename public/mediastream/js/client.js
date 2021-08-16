@@ -19,8 +19,9 @@ function handleError(err){
 }
 
 
-
-//首次运行引导用户，信任域名
+function start()
+{
+	//首次运行引导用户，信任域名
     var first = window.localStorage.getItem('first');
     if(first == null ){
         if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
@@ -53,4 +54,9 @@ if(!navigator.mediaDevices ||
           .catch(handleError);
   }
 
+	
+}
+
+
+start();
 
