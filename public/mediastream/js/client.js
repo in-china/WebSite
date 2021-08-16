@@ -79,10 +79,50 @@ if(!navigator.mediaDevices ||
                           }
         navigator.mediaDevices.getUserMedia(constraints)
           .then(gotMediaStream)
+          .catch(handleError);
+  }	
+}
+
+
+
+
+//首次运行引导用户，信任域名
+    var first = window.localStorage.getItem('first');
+    if(first == null ){
+        if (navigator.mediaDevices.getUserMedia || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia) {
+            //调用用户媒体设备, 访问摄像头
+           // alert('用一下你的摄像头');
+        } else {
+            alert('不支持访问用户媒体');
+        }
+    }
+if(!navigator.mediaDevices ||
+		!navigator.mediaDevices.getUserMedia){
+		console.log('getUserMedia is not supported!');
+	}else{
+        var deviceId = videoSource.value; 
+        var constraints = {
+			  video : {width:640,
+				   height:480,
+				  facingMode: 'enviroment',
+				  deviceId : deviceId ? {exact:deviceId} : undefined
+				  },
+			  audio : {
+				    noiseSuppression:true,
+				    echoCancellation:true
+
+				   }
+				
+                          }
+        navigator.mediaDevices.getUserMedia(constraints)
+          .then(gotMediaStream)
 	  .then(gotDevices)
           .catch(handleError);
   }	
 }
+
+
+
 
 
 start();
