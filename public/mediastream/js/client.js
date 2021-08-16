@@ -11,6 +11,12 @@ var audioSource = document.querySelector('select#audioSource');
 var audioOutput = document.querySelector('select#audioOutput');
 var videoSource = document.querySelector('select#videoSource');
 
+//picture
+var snapshot = document.querySelector('button#snapshot');
+var picture = document.querySelector('canvas#picture');
+picture.width = 640;
+picture.height = 480;
+
 
 
 function gotMediaStream(stream){
@@ -129,6 +135,10 @@ start();
 videoSource.onchange = start;
 
 
+snapshot.onclick = function() {
+	picture.className = filtersSelect.value;
+	picture.getContext('2d').drawImage(videoplay, 0, 0, picture.width, picture.height);
+}
 
 
 
