@@ -3,7 +3,7 @@
 
 var videoplay = document.querySelector('video#player');
 //var audioplay = document.querySelector('audio#audioplayer');
-
+var videoSource = document.querySelector('select#videoSource');
 
 function gotMediaStream(stream){
 
@@ -46,17 +46,32 @@ if(!navigator.mediaDevices ||
 		  
 		  	   }
                           }
-
-    
-    
         navigator.mediaDevices.getUserMedia(constraints)
           .then(gotMediaStream)
           .catch(handleError);
-  }
-
-	
+  }	
 }
 
 
 start();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
